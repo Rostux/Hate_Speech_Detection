@@ -1,16 +1,21 @@
 # Hate Speech Detection using NLP
 
+<br>
 
 Hate speech using a CNN based model with Glove embedding layer (transfer learning). The dataset contains of toxic comments from various online social media platforms.
 
+<br>
 
-## Data Visualisation & Preprocessing
+# Data Visualisation & Preprocessing
 
+
+<br>
 
 The dataset was divided into two parts, a training set and a test set.
 
 
 The training set contains of 159571 comments each labelled as either toxic('1') or non-toxic('0').
+
 Here's a preview:
 
 
@@ -30,8 +35,11 @@ Here's a preview:
 
 [159571 rows x 2 columns]
 
+<br>
 
-The test set contains of 63978 comments in a labelled similarly.
+
+The test set contains of 63978 comments labelled similarly.
+
 Here's a preview:
 
 |       |toxic|                                               text|
@@ -51,11 +59,17 @@ Here's a preview:
 [63978 rows x 2 columns]
 
 
-## Preprocessing and text cleaning
+# Preprocessing and text cleaning
+
+
+<br>
 
 
 Before processing our comments, we will first clean them so that the model can process them as efficiently as possible.
 For this purpose, we remove punctuations, stopwords, URL's, html and other symbols that don't contribute to the sentiment of the sentences.
+
+<br>
+
 
 After preprocessing, the dataset:
 
@@ -78,8 +92,9 @@ After preprocessing, the dataset:
 
 
 
-## Model
+# Model
 
+<br>
 
 The model uses GloVe embedding (transfer learning) and several convolution and poolinglayers, binary crossentropy loss function and adam optimizer.
 
@@ -90,14 +105,34 @@ The model uses GloVe embedding (transfer learning) and several convolution and p
 GloVe is essentially a log-bilinear model with a weighted least-squares objective. The main intuition underlying the model is the simple observation that ratios of word-word co-occurrence probabilities have the potential for encoding some form of meaning. For example, consider the co-occurrence probabilities for target words ice and steam with various probe words from the vocabulary.
 
 
+<br>
+
+
+
 <img src="images/glv.png" style="width:700px;height:400;">_
+
+
+<br>
+
 
 
 As one might expect, ice co-occurs more frequently with solid than it does with gas, whereas steam co-occurs more frequently with gas than it does with solid. Both words co-occur with their shared property water frequently, and both co-occur with the unrelated word fashion infrequently. In this way, the ratio of probabilities encodes some crude form of meaning associated with the abstract concept of thermodynamic phase. 
 
+
+
+<br>
+
+
 The GloVe embedding layer produces vector representation of words which are further processed through the model to extract the overall sentiment of the comments and classify them as toxic.
 
-#Strcuture:
+
+<br>
+
+
+# Strcuture:
+
+<br>
+
 
 Model: "sequential"
 |Layer (type)                | Output Shape        |      Param #   |
@@ -131,6 +166,8 @@ ___________________________________________________________________
 
 
 Accuracy: 92.89%
+
+<br>
 F1 Score: 0.8091
 
 
