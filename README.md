@@ -58,6 +58,7 @@ For this purpose, we remove punctuations, stopwords, URL's, html and other symbo
 After preprocessing, the dataset:
 
 |       | toxic |                                              text|
+|-------|-------|--------------------------------------------------|
 |0      |     0 | explanation edits made username hardcore metal...|
 |1      |     0 | d'aww! matches background colour i'm seemingly...|
 |2      |     0 | hey man, i'm really trying edit war. guy const...|
