@@ -35,7 +35,6 @@ Here's a preview:
 
 [159571 rows x 2 columns]
 
-<br>
 
 
 The test set contains of 63978 comments labelled similarly.
@@ -90,13 +89,15 @@ After preprocessing, the dataset:
 [159571 rows x 2 columns]
 
 
-
+<br>
 
 # Model
 
 <br>
 
 The model uses GloVe embedding (transfer learning) and several convolution and poolinglayers, binary crossentropy loss function and adam optimizer.
+
+<br>
 
 # GloVe Embedding
 
@@ -149,11 +150,15 @@ Model: "sequential"
 
 
 Total params: 1,451,001
+
+
 Trainable params: 451,001
+
+
 Non-trainable params: 1,000,000
 ___________________________________________________________________
 
-
+<br>
 
 
 ## Results
