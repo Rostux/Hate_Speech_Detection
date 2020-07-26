@@ -57,18 +57,18 @@ For this purpose, we remove punctuations, stopwords, URL's, html and other symbo
 
 After preprocessing, the dataset:
 
-        toxic                                               text
-0           0  explanation edits made username hardcore metal...
-1           0  d'aww! matches background colour i'm seemingly...
-2           0  hey man, i'm really trying edit war. guy const...
-3           0  can't make real suggestions improvement wonder...
-4           0    you, sir, hero. chance remember page that's on?
-...       ...                                                ...
-159566      0  ":::::and second time asking, view completely ...
-159567      0  ashamed horrible thing put talk page. 128.61.1...
-159568      0  spitzer umm, theres actual article prostitutio...
-159569      0  looks like actually put speedy first version d...
-159570      0  ... really think understand. came idea bad rig...
+|       | toxic |                                              text|
+|0      |     0 | explanation edits made username hardcore metal...|
+|1      |     0 | d'aww! matches background colour i'm seemingly...|
+|2      |     0 | hey man, i'm really trying edit war. guy const...|
+|3      |     0 | can't make real suggestions improvement wonder...|
+|4      |     0 |   you, sir, hero. chance remember page that's on?|
+|...    |   ... |                                               ...|
+|159566 |     0 | ":::::and second time asking, view completely ...|
+|159567 |     0 | ashamed horrible thing put talk page. 128.61.1...|
+|159568 |     0 | spitzer umm, theres actual article prostitutio...|
+|159569 |     0 | looks like actually put speedy first version d...|
+|159570 |     0 | ... really think understand. came idea bad rig...|
 
 [159571 rows x 2 columns]
 
@@ -97,26 +97,26 @@ The GloVe embedding layer produces vector representation of words which are furt
 #Strcuture:
 
 Model: "sequential"
-____________________________|_____________________|________________
-Layer (type)                | Output Shape        |      Param #   
-____________________________|_____________________|________________
-embedding (Embedding)       | (None, 300, 100)    |      1000000   
-____________________________|_____________________|________________
-dropout (Dropout)           | (None, 300, 100)    |      0         
-____________________________|_____________________|________________
-conv1d (Conv1D)             | (None, 298, 250)    |      75250     
-____________________________|_____________________|________________
-max_pooling1d (MaxPooling1D)| (None, 149, 250)    |      0         
-____________________________|_____________________|________________
-conv1d_1 (Conv1D)           | (None, 145, 250)    |      312750    
-____________________________|_____________________|________________
-global_max_pooling1d(Global)| (None, 250)         |      0         
-____________________________|_____________________|________________
-dense (Dense)               | (None, 250)         |      62750     
-____________________________|_____________________|________________
-dropout_1 (Dropout)         | (None, 250)         |      0         
-____________________________|_____________________|________________
-dense_1 (Dense)             | (None, 1)           |      251       
+|____________________________|_____________________|________________|
+|Layer (type)                | Output Shape        |      Param #   |
+|____________________________|_____________________|________________|
+|embedding (Embedding)       | (None, 300, 100)    |      1000000   |
+|____________________________|_____________________|________________|
+|dropout (Dropout)           | (None, 300, 100)    |      0         |
+|____________________________|_____________________|________________|
+|conv1d (Conv1D)             | (None, 298, 250)    |      75250     |
+|____________________________|_____________________|________________|
+|max_pooling1d (MaxPooling1D)| (None, 149, 250)    |      0         |
+|____________________________|_____________________|________________|
+|conv1d_1 (Conv1D)           | (None, 145, 250)    |      312750    |
+|____________________________|_____________________|________________|
+|global_max_pooling1d(Global)| (None, 250)         |      0         |
+|____________________________|_____________________|________________|
+|dense (Dense)               | (None, 250)         |      62750     |
+|____________________________|_____________________|________________|
+|dropout_1 (Dropout)         | (None, 250)         |      0         |
+|____________________________|_____________________|________________|
+|dense_1 (Dense)             | (None, 1)           |      251       |
 
 
 Total params: 1,451,001
